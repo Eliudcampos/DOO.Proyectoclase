@@ -10,11 +10,11 @@
 	</parent>
 	<groupId>co.edu.tiendaonline</groupId>
 	<artifactId>TiendaOnline</artifactId>
-	<version>1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>TiendaOnline</name>
-	<description>Back que ofrece todos los servicios de negocio de la aplicacionw web</description>
+	<description>Backend que ofrece todos los servicios de negocio de la aplicación tiendaOnline</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>20</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
