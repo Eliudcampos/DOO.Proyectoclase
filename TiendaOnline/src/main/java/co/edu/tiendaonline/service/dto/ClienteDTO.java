@@ -7,19 +7,18 @@ import co.edu.tiendaonline.data.entity.support.CorreoElectronicoClienteEntity;
 import co.edu.tiendaonline.data.entity.support.NombreCompletoClienteEntity;
 import co.edu.tiendaonline.data.entity.support.NumeroTelefonoMovilClienteEntity;
 import co.edu.tiendaonline.service.dto.support.CorreoElectronicoClienteDTO;
+import co.edu.tiendaonline.service.dto.support.NombreCompletoClienteDTO;
+import co.edu.tiendaonline.service.dto.support.NumeroTelefonoMovilClienteDTO;
 
 public class ClienteDTO {
 
 	private UUID id;
 	private TipoIdentificacionDTO tipoIdentificacion;
 	private String identificacion;
-	private NombreCompletoClienteEntity nombreCompleto;
+	private NombreCompletoClienteDTO nombreCompleto;
 	private CorreoElectronicoClienteDTO correoElectronico;
-	private NumeroTelefonoMovilClienteEntity numeroTelefonoMovil;
+	private NumeroTelefonoMovilClienteDTO numeroTelefonoMovil;
 	private Date fechaNacimiento;
-	public final UUID getId() {
-		return id;
-	}
 	
 	public ClienteDTO() {
 		setId(id);
@@ -30,13 +29,12 @@ public class ClienteDTO {
 		setNumeroTelefonoMovil(numeroTelefonoMovil);
 		setFechaNacimiento(fechaNacimiento);
 	}
-	}
 	
 	
 	
 	public ClienteDTO(final UUID id, final TipoIdentificacionDTO tipoIdentificacion, final String identificacion,
-			final NombreCompletoClienteEntity nombreCompleto, final CorreoElectronicoClienteDTO correoElectronico,
-			final NumeroTelefonoMovilClienteEntity numeroTelefonoMovil, final Date fechaNacimiento) {
+			final NombreCompletoClienteDTO nombreCompleto, final CorreoElectronicoClienteDTO correoElectronico,
+			final NumeroTelefonoMovilClienteDTO numeroTelefonoMovil, final Date fechaNacimiento) {
 		setId(id);
 		setTipoIdentificacion(tipoIdentificacion);
 		setIdentificacion(identificacion);
@@ -55,13 +53,13 @@ public class ClienteDTO {
 	public final String getIdentificacion() {
 		return identificacion;
 	}
-	public final NombreCompletoClienteEntity getNombreCompleto() {
+	public final NombreCompletoClienteDTO getNombreCompleto() {
 		return nombreCompleto;
 	}
 	public final CorreoElectronicoClienteDTO getCorreoElectronico() {
 		return correoElectronico;
 	}
-	public final NumeroTelefonoMovilClienteEntity getNumeroTelefonoMovil() {
+	public final NumeroTelefonoMovilClienteDTO getNumeroTelefonoMovil() {
 		return numeroTelefonoMovil;
 	}
 	public final Date getFechaNacimiento() {
@@ -79,7 +77,7 @@ public class ClienteDTO {
 		this.identificacion = identificacion;
 		return this;
 	}
-	public final ClienteDTO setNombreCompleto(NombreCompletoClienteEntity nombreCompleto) {
+	public final ClienteDTO setNombreCompleto(NombreCompletoClienteDTO nombreCompleto) {
 		this.nombreCompleto = nombreCompleto;
 		return this;
 	}
@@ -87,7 +85,7 @@ public class ClienteDTO {
 		this.correoElectronico = correoElectronico;
 		return this;
 	}
-	public final ClienteDTO setNumeroTelefonoMovil(NumeroTelefonoMovilClienteEntity numeroTelefonoMovil) {
+	public final ClienteDTO setNumeroTelefonoMovil(NumeroTelefonoMovilClienteDTO numeroTelefonoMovil) {
 		this.numeroTelefonoMovil = numeroTelefonoMovil;
 		return this;
 	}

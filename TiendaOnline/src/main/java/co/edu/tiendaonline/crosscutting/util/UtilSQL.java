@@ -48,19 +48,20 @@ public final class UtilSQL {
 				var mensajeTecnico = "No es posible cerrar una conexión que ya fue cerrada";
 				throw CrossCuttingTiendaOnlineException.crear(mensajeUsuario, mensajeTecnico);
 			}
-			catch (final CrossCuttingTiendaOnlineException excepcion) {
-				throw excepcion;
-			}catch (final SQLException excepcion) {
-				var mensajeUsuario = CatalogoMensajes.obtenerContenidoMensaje(CodigoMensaje.M0000000004);
-				var mensajeTecnico = "No es posible cerrar una conexión que ya fue cerrada";
-				throw CrossCuttingTiendaOnlineException.crear(excepcion, mensajeUsuario, mensajeTecnico);
-			} catch (final Exception excepcion) {
-				var mensajeUsuario = CatalogoMensajes.obtenerContenidoMensaje(CodigoMensaje.M0000000004);
-				var mensajeTecnico = CatalogoMensajes.obtenerContenidoMensaje(CodigoMensaje.M0000000006);
-				throw CrossCuttingTiendaOnlineException.crear(excepcion, mensajeUsuario, mensajeTecnico);
+			conexion.close();
+		}catch (final CrossCuttingTiendaOnlineException excepcion) {
+			throw excepcion;
+		}catch (final SQLException excepcion) {
+			var mensajeUsuario = CatalogoMensajes.obtenerContenidoMensaje(CodigoMensaje.M0000000004);
+			var mensajeTecnico = "No es posible cerrar una conexión que ya fue cerrada";
+			throw CrossCuttingTiendaOnlineException.crear(excepcion, mensajeUsuario, mensajeTecnico);
+		} catch (final Exception excepcion) {
+			var mensajeUsuario = CatalogoMensajes.obtenerContenidoMensaje(CodigoMensaje.M0000000004);
+			var mensajeTecnico = CatalogoMensajes.obtenerContenidoMensaje(CodigoMensaje.M0000000006);
+			throw CrossCuttingTiendaOnlineException.crear(excepcion, mensajeUsuario, mensajeTecnico);
 			}
 			
-		}
+	}
 		
 	public static final void iniciarTransaccion(final Connection conexion) {
 		if (UtilObjeto.esNulo(conexion)) {
