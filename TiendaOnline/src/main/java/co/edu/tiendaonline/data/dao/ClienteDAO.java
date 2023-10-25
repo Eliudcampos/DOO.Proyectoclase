@@ -7,13 +7,13 @@ import co.edu.tiendaonline.data.entity.ClienteEntity;
 
 public interface ClienteDAO {
 
-	void crear(ClienteEntity cliente);
+	void crear(ClienteEntity entity);
 	
-	void modificar(ClienteEntity cliente);
+	void modificar(ClienteEntity entity);
 
 	void eliminar(UUID id);
 	
 	Optional<ClienteEntity> consultarPorId(UUID id);
 	
-	List<ClienteEntity> consultar(ClienteEntity cliente);
+	List<ClienteEntity> consultar(ClienteEntity entity);
 }

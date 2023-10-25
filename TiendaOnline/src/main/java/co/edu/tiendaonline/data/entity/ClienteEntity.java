@@ -37,8 +37,8 @@ public class ClienteEntity {
 		this.id = id;
 	}
 
-	private final void setTipoIdentificacion(final TipoIdentificacionEntity tipoIdentificacion) {
-		this.tipoIdentificacion = tipoIdentificacion;
+	private final void setTipoIdentificacion(final TipoIdentificacionEntity entity) {
+		this.tipoIdentificacion = entity;
 	}
 
 	private final void setIdentificacion(final String identificacion) {
